@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/app.js',
+    entry: './src/index.tsx',
     output: {
         filename: 'main.js',
         path: path.resolve('dist')
@@ -9,7 +9,8 @@ module.exports = {
     // define babel loader
     module: {
         rules: [
-            { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ }
+            { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
+            {test: /\.tsx?$/, loader: 'ts-loader', exclude: /node_modules/}
         ]
     },
     devServer: {
